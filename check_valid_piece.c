@@ -6,7 +6,7 @@
 /*   By: pabril <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/02 18:10:47 by pabril            #+#    #+#             */
-/*   Updated: 2015/12/03 14:02:29 by pabril           ###   ########.fr       */
+/*   Updated: 2015/12/03 14:27:08 by pabril           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,6 @@ int		check_valid_piece(char *str)
 	int index;
 
 	index = 0;
-	printf("yoo");
 	while (str[index] != '\0')
 	{
 		if (check_number_pieces(str, index) == 0)
@@ -81,7 +80,6 @@ int		main(int ac, char **av)
 	int a;
 	char *str;
 
-	printf("yo");
 	a = check_valid_piece(av[1]);
 	printf("%d\n", a);
 	return (0);
