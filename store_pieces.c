@@ -6,7 +6,7 @@
 /*   By: pabril <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/04 11:16:02 by pabril            #+#    #+#             */
-/*   Updated: 2015/12/04 14:46:14 by pabril           ###   ########.fr       */
+/*   Updated: 2015/12/04 15:12:18 by pabril           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ t_list	*store_pieces(char *str)
 	{
 		tmpstr = ft_strsub(str, index, 20);
 		tempo = ft_lstnew(tmpstr, 20);
-		ft_lstadd(&lst, tempo);
+		ft_lstpushback(&lst, tempo);
 		index += 21;
 	}
 	return (lst);
