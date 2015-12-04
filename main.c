@@ -6,11 +6,12 @@
 /*   By: pabril <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/04 10:37:23 by pabril            #+#    #+#             */
-/*   Updated: 2015/12/04 10:44:02 by pabril           ###   ########.fr       */
+/*   Updated: 2015/12/04 13:30:33 by pabril           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
+#include "libft.h"
 
 int		all_squares(char *str)
 {
@@ -43,7 +44,9 @@ int		all_squares(char *str)
 	else
 		return (1);
 }
+
 //checker.c
+
 int		sign_checker(char *str)
 {
 	int i;
@@ -91,12 +94,12 @@ int		check_shape(char *str, int index)
 	}
 	while (i % 20 != 0 || i == 0)
 	{
-		if (i % 20 > 4 && str[index - 5] == '#') // voisin en haut ?
+		if (i % 20 > 4 && str[index - 5] == '#')// voisin en haut ?
 			count++;
 		if (i % 20 < 15 && str[index + 5] == '#') // voisin en bas ?
 			count++;
 		if (i % 5 > 0 && str[index - 1] == '#') // voisin a gauche ?
-			count ++;
+			count++;
 		if (i % 5 < 3 && str[index + 1] == '#') // voisin a droite ?
 			count++;
 		index++;
@@ -127,14 +130,16 @@ int		check_valid_piece(char *str)
 	}
 	return (1);
 }
+
 //I've checke for the validity of the signs and the squares
 //now I need to see if the Tetrimonis are valid as well
-int main(int argc, char **argv)
+
+int		main(int argc, char **argv)
 {
-	int fd;
-	char buff;
-	char buffer[BUFF_SIZE];
-	int i;
+	int		fd;
+	char	buff;
+	char	buffer[BUFF_SIZE];
+	int		i;
 
 	i = 0;
 	if (argc != 2)
@@ -142,12 +147,15 @@ int main(int argc, char **argv)
 	fd = open(argv[1], O_RDONLY);
 	while (read(fd, &buff, 1) != 0 && buff != '\0')
 	{
-		buffer[i] = buff;					//scanning into the buffer
+		buffer[i] = buff;//								scanning into the buffer
 		i++;
 	}
 	//buffer[i] = '\0';
+	ft_putendl("au top la libft");
+	ft_putnbr(min_size_square(buffer));
+	ft_putchar('\n');
 	if (sign_checker(buffer) == 1 && printf("ok1\n"))
-		if (all_squares(buffer) == 1 && printf ("ok2\n"))
+		if (all_squares(buffer) == 1 && printf("ok2\n"))
 			if (check_valid_piece(buffer) == 1 && printf("ok3\n"))// c'est cette fonction là qui ne valide pas..
 				printf("test!\n");
 	return (0);

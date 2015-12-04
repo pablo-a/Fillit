@@ -6,7 +6,7 @@
 /*   By: pabril <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/04 11:32:43 by pabril            #+#    #+#             */
-/*   Updated: 2015/12/04 11:41:14 by pabril           ###   ########.fr       */
+/*   Updated: 2015/12/04 13:28:16 by pabril           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int		min_size_square(char *str)
 		nb_pieces++;
 		index += 21;
 	}
-	while ((i * i) < (4 * nb_pieces))
-		i++;
-	return (i);
+	while ((size * size) < (4 * nb_pieces))
+		size++;
+	return (size);
 }
