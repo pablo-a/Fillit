@@ -6,18 +6,28 @@
 /*   By: pabril <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/04 11:16:02 by pabril            #+#    #+#             */
-/*   Updated: 2015/12/04 13:23:50 by pabril           ###   ########.fr       */
+/*   Updated: 2015/12/04 14:46:14 by pabril           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include "fillit.h"
 
-t_piece	*store_pieces(char *str)
+t_list	*store_pieces(char *str)
 {
-	t_piece lst;
+	t_list			*lst;
+	t_list			*tempo;
+	char			*tmpstr;
+	unsigned int	index;
 
-	while (*str)
+	index = 21;
+	lst = ft_lstnew(ft_strsub(str, 0, 20), 20);
+	while (str[index] != '\0')
 	{
-
+		tmpstr = ft_strsub(str, index, 20);
+		tempo = ft_lstnew(tmpstr, 20);
+		ft_lstadd(&lst, tempo);
+		index += 21;
 	}
+	return (lst);
 }

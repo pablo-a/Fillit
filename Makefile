@@ -6,7 +6,7 @@
 #    By: pabril <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/04 12:57:46 by pabril            #+#    #+#              #
-#    Updated: 2015/12/04 13:26:00 by pabril           ###   ########.fr        #
+#    Updated: 2015/12/04 14:14:35 by pabril           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,8 @@ FLAGS = -Wall -Wextra -Werror
 LIBFT = libft.a
 NAME = fillit
 SRC = main.c \
-	  min_size_square.c
+	  min_size_square.c \
+	  store_pieces.c
 
 all: $(LIBFT) $(NAME)
 
@@ -29,7 +30,7 @@ $(NAME):
 
 clean:
 	@echo "delete *.o"
-	@rm -f *.o
+	@cd libft/ && rm -f *.o
 
 fclean: clean
 	@echo "delete $(NAME)"

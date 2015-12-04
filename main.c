@@ -6,7 +6,7 @@
 /*   By: pabril <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/04 10:37:23 by pabril            #+#    #+#             */
-/*   Updated: 2015/12/04 13:30:33 by pabril           ###   ########.fr       */
+/*   Updated: 2015/12/04 14:42:30 by pabril           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -151,9 +151,15 @@ int		main(int argc, char **argv)
 		i++;
 	}
 	//buffer[i] = '\0';
-	ft_putendl("au top la libft");
 	ft_putnbr(min_size_square(buffer));
 	ft_putchar('\n');
+	t_list *lst;
+	lst = store_pieces(buffer);
+	while (lst)
+	{
+		ft_putendl(lst->content);
+		lst = lst->next;
+	}
 	if (sign_checker(buffer) == 1 && printf("ok1\n"))
 		if (all_squares(buffer) == 1 && printf("ok2\n"))
 			if (check_valid_piece(buffer) == 1 && printf("ok3\n"))// c'est cette fonction là qui ne valide pas..
