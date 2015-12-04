@@ -6,7 +6,7 @@
 #    By: pabril <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/04 12:57:46 by pabril            #+#    #+#              #
-#    Updated: 2015/12/04 14:14:35 by pabril           ###   ########.fr        #
+#    Updated: 2015/12/04 16:15:02 by pabril           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,8 @@ LIBFT = libft.a
 NAME = fillit
 SRC = main.c \
 	  min_size_square.c \
-	  store_pieces.c
+	  store_pieces.c \
+	  check_valid_pieces.c
 
 all: $(LIBFT) $(NAME)
 
