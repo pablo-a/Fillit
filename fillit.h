@@ -6,7 +6,7 @@
 /*   By: pabril <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/04 10:57:49 by pabril            #+#    #+#             */
-/*   Updated: 2015/12/04 16:26:47 by pabril           ###   ########.fr       */
+/*   Updated: 2015/12/04 16:35:36 by pabril           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <unistd.h>
 # include <string.h>
 # include <fcntl.h>
-#include "libft.h"
+# include "libft.h"
 
 int		all_squares(char *str);//							 fonctions of
 int		sign_checker(char *str);//								main.c
@@ -33,6 +33,6 @@ int		check_valid_piece(char *str);//
 int		number_pieces(char *str);//				functions of
 int		min_size_square(char *str);//			min_size_square.c
 
-t_list  *store_pieces(char *str);//				function of store_pieces.c
+t_list	*store_pieces(char *str);//				function of store_pieces.c
 
 #endif
