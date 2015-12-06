@@ -6,14 +6,14 @@
 /*   By: pabril <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/04 10:57:49 by pabril            #+#    #+#             */
-/*   Updated: 2015/12/06 12:30:12 by pabril           ###   ########.fr       */
+/*   Updated: 2015/12/06 13:03:13 by pabril           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FILLIT_H
 # define FILLIT_H
 
-# define BUFF_SIZE 90622
+# define BUFF_SIZE 1024
 
 # include <stdio.h>
 # include <stdlib.h>
@@ -22,11 +22,11 @@
 # include <fcntl.h>
 # include "libft.h"
 
-int		all_squares(char *str);//							 fonctions of
+int		all_squares(char *str);//							 functions of
 int		sign_checker(char *str);//								main.c
 
 int		check_number_pieces(char *str, int index);//
-int		count_neighbours(int count, char *str, int index, int i);// fonctions of
+int		count_neighbours(int count, char *str, int index, int i);// functions of
 int		check_shape(char *str, int index);//					check_valid_pieces.c
 int		check_valid_piece(char *str);//
 
