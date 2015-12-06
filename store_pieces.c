@@ -6,7 +6,7 @@
 /*   By: pabril <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/04 11:16:02 by pabril            #+#    #+#             */
-/*   Updated: 2015/12/06 13:05:36 by pabril           ###   ########.fr       */
+/*   Updated: 2015/12/06 14:57:35 by pabril           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,24 @@
 #include "fillit.h"
 
 
+/*function to reduce each piece to the minimum chain*/
+void	reduce_piece(t_list **lst)
+{
+	char	*str;
+	t_list *tempo;
+
+	tempo = *lst;
+	while (tempo)
+	{
+		str = (char *)(tempo->content);
+
+
+		tempo = tempo->next;
+	}
+}
+
 // function allows to reduce all pieces to a unique piece : AAAA, BBBB, CCCC, ...
-void	identify_shape(t_list **lst)
+void	identify_piece(t_list **lst)
 {
 	int i;
 	int piece;
@@ -56,6 +72,6 @@ t_list	*store_pieces(char *str)
 		ft_lstpushback(&lst, tempo);
 		index += 21;
 	}
-	identify_shape(&lst);
+	identify_piece(&lst);
 	return (lst);
 }
