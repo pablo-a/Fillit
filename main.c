@@ -6,7 +6,7 @@
 /*   By: pabril <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/04 10:37:23 by pabril            #+#    #+#             */
-/*   Updated: 2015/12/04 16:40:26 by pabril           ###   ########.fr       */
+/*   Updated: 2015/12/06 12:36:54 by pabril           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ int		main(int argc, char **argv)
 	}
 	if (sign_checker(buffer) == 1 && printf("ok1\n"))
 		if (all_squares(buffer) == 1 && printf("ok2\n"))
-			if (check_valid_piece(buffer) == 1 && printf("ok3\n"))// c'est cette fonction là qui ne valide pas..
+			if (check_valid_piece(buffer) == 1 && printf("ok3\n"))
 				printf("test!\n");
 	return (0);
 }
