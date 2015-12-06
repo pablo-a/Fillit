@@ -6,7 +6,7 @@
 #    By: pabril <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/04 12:57:46 by pabril            #+#    #+#              #
-#    Updated: 2015/12/04 16:15:02 by pabril           ###   ########.fr        #
+#    Updated: 2015/12/06 14:27:42 by pabril           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ NAME = fillit
 SRC = main.c \
 	  min_size_square.c \
 	  store_pieces.c \
-	  check_valid_pieces.c
+	  check_valid_pieces.c \
+	  resolution.c
 
 all: $(LIBFT) $(NAME)
 
@@ -30,12 +31,12 @@ $(NAME):
 	@$(CC) $(FLAGS) $(SRC) -o $(NAME) -L libft -l ft
 
 clean:
-	@echo "delete *.o"
-	@cd libft/ && rm -f *.o
+	@make clean -C libft/
 
 fclean: clean
 	@echo "delete $(NAME)"
 	@rm -f $(NAME)
+	@make fclean -C libft/
 
 re: fclean all
 
