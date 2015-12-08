@@ -6,7 +6,7 @@
 /*   By: pabril <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/05 12:20:37 by pabril            #+#    #+#             */
-/*   Updated: 2015/12/08 13:18:32 by pabril           ###   ########.fr       */
+/*   Updated: 2015/12/08 13:35:59 by pabril           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	*create_square(int size)
 	return (square);
 }
 
-int		can_place(t_list *lst, int index, char *result)
+int		can_place(t_list *lst, int index, char *result, int size_square)
 {
 	char *str;
 	int i;
@@ -45,11 +45,12 @@ int		can_place(t_list *lst, int index, char *result)
 		i++;
 	while (str[i])
 	{
-		if (index > )
+		if (index > (size_square * size_square + 1) - 2)
+			return (0);
 		if (ft_isupper(str[i]) == 1 && result[index] == '.')
 			count++;
 		i++;
-		count++;
+		index++;
 	}
 	if (count == 4)
 		return (1);
@@ -104,7 +105,7 @@ int		resolution(t_list *lst, int size_square, char *result)
 	{
 		while (result[index] != '.')
 			index++;
-		if (can_place(lst, index, result) == 1)
+		if (can_place(lst, index, result, size_square) == 1)
 		{
 			place(lst, &result, index);
 			if (resolution(lst->next, size_square, result) == 1)
