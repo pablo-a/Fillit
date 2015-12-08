@@ -6,7 +6,7 @@
 /*   By: pabril <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/04 10:37:23 by pabril            #+#    #+#             */
-/*   Updated: 2015/12/06 14:03:39 by pabril           ###   ########.fr       */
+/*   Updated: 2015/12/08 12:47:42 by pabril           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,5 +94,7 @@ int		main(int argc, char **argv)
 		if (all_squares(buffer) == 1 && printf("ok2\n"))
 			if (check_valid_piece(buffer) == 1 && printf("ok3\n"))
 				printf("test!\n");
+
+
 	return (0);
 }

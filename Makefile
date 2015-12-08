@@ -6,7 +6,7 @@
 #    By: pabril <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/04 12:57:46 by pabril            #+#    #+#              #
-#    Updated: 2015/12/06 14:27:42 by pabril           ###   ########.fr        #
+#    Updated: 2015/12/08 10:37:29 by pabril           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ SRC = main.c \
 	  min_size_square.c \
 	  store_pieces.c \
 	  check_valid_pieces.c \
-	  resolution.c
+#	  resolution.c
 
 all: $(LIBFT) $(NAME)
 
