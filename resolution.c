@@ -6,7 +6,7 @@
 /*   By: pabril <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/05 12:20:37 by pabril            #+#    #+#             */
-/*   Updated: 2015/12/08 12:53:06 by pabril           ###   ########.fr       */
+/*   Updated: 2015/12/08 13:00:46 by pabril           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,16 @@ char	*create_square(int size)
 		index++;
 	}
 	return (square);
+}
+
+int		can_place(t_list *lst, int index, char *result)
+{
+
+}
+
+void	place(t_list *lst, char **result, int index)
+{
+
 }
 
 void	unplace_piece(t_list *lst, char **result)
