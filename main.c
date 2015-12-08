@@ -13,6 +13,19 @@
 #include "fillit.h"
 #include "libft.h"
 
+int 	sub_all_squares(char c, int block, int sign)
+{
+	if (str[i] == '\n' && sign != 4 && block != 16)
+		return (0);
+	if (str[i] == '\n' && sign == 4)
+		sign = 0;
+	if (str[i] == '\n' && str[i - 1] == '\n' && block == 16)
+		block = 0;
+	if (sign > 4 || block > 16)
+		return (0);
+	return (1);
+}
+
 int		all_squares(char *str)
 {
 	int block;
@@ -29,13 +42,7 @@ int		all_squares(char *str)
 			sign++;
 			block++;
 		}
-		if (str[i] == '\n' && sign != 4 && block != 16)
-			return (0);
-		if (str[i] == '\n' && sign == 4)
-			sign = 0;
-		if (str[i] == '\n' && str[i - 1] == '\n' && block == 16)
-			block = 0;
-		if (sign > 4 || block > 16)
+		if (sub_all_squares(str[i], block, sign) == 0)
 			return (0);
 		i++;
 	}
