@@ -6,7 +6,7 @@
 /*   By: pabril <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/04 10:37:23 by pabril            #+#    #+#             */
-/*   Updated: 2015/12/08 12:47:42 by pabril           ###   ########.fr       */
+/*   Updated: 2015/12/08 14:30:47 by pabril           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,20 +81,18 @@ int		main(int argc, char **argv)
 		i++;
 	}
 	//buffer[i] = '\0';
-	ft_putnbr(min_size_square(buffer));
-	ft_putchar('\n');
-	t_list *lst;
-	lst = store_pieces(buffer);
-	while (lst)
-	{
-		ft_putendl(lst->content);
-		lst = lst->next;
-	}
 	if (sign_checker(buffer) == 1 && printf("ok1\n"))
 		if (all_squares(buffer) == 1 && printf("ok2\n"))
 			if (check_valid_piece(buffer) == 1 && printf("ok3\n"))
 				printf("test!\n");
 
-
+	int size_square = min_size_square(buffer);
+	char *result;
+	result = create_square(size_square);
+	ft_putendl(result);
+	t_list *lst;
+	lst = store_pieces(buffer);
+	resolution(lst, size_square, result);
+	ft_putendl(result);
 	return (0);
 }

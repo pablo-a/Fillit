@@ -6,7 +6,7 @@
 /*   By: pabril <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/05 12:20:37 by pabril            #+#    #+#             */
-/*   Updated: 2015/12/08 13:41:43 by pabril           ###   ########.fr       */
+/*   Updated: 2015/12/08 14:30:50 by pabril           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,23 @@ char	*create_square(int size)
 {
 	char	*square;
 	int		index;
+	int		i;
 
+	i = 0;
 	index = 0;
-	square = ft_strnew((size * 5) + 1);
+	square = ft_strnew(size * (size + 1));
 	if (!square)
 		return (NULL);
-	while (index <= (size * 5))
+	while (index < (size * (size + 1)))
 	{
-		if (index % 4 == 0 && index != 0)
-			square[index] = '\n';
-		else
+		i = 0;
+		while (i < size)
+		{
 			square[index] = '.';
+			index++;
+			i++;
+		}
+		square[index] = '\n';
 		index++;
 	}
 	return (square);
