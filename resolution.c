@@ -6,7 +6,7 @@
 /*   By: pabril <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/05 12:20:37 by pabril            #+#    #+#             */
-/*   Updated: 2015/12/08 15:29:46 by pabril           ###   ########.fr       */
+/*   Updated: 2015/12/08 18:27:27 by pabril           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,26 +46,24 @@ int		can_place(t_list *lst, int index, char *result, int size_square)
 	int count;
 
 	str = (char *)lst->content;
+	ft_putendl(str);
 	i = 0;
 	count = 0;
 	while (ft_isupper(str[i]) != 1)
 		i++;
-	while (str[i])
+	while (str[i] != '\0' && index < (size_square * (size_square + 1) - 1))
 	{
-		if (index > (size_square * (size_square + 1)) - 2)
-			return (0);
 		if (ft_isupper(str[i]) == 1 && result[index] == '.')
 			count++;
 		i++;
 		index++;
 	}
-	ft_putendl(result);
 	if (count == 4)
 		return (1);
 	return (0);
 }
 
-void	place(t_list *lst, char **result, int index)
+void	place(t_list *lst, char **result, int index, int size_square)
 {
 	int i;
 	char *str;
@@ -74,7 +72,7 @@ void	place(t_list *lst, char **result, int index)
 	str = (char *)lst->content;
 	while (ft_isupper(str[i]) != 1)
 		i++;
-	while (str[i])
+	while (str[i] && index < (size_square * (size_square + 1) - 1))
 	{
 		if (ft_isupper(str[i]) == 1)
 			(*result)[index] = str[i];
@@ -110,18 +108,18 @@ int		resolution(t_list *lst, int size_square, char *result)
 	index = 0;
 	if (lst == NULL)
 		return (1);
-	while (index < ((size_square) * (size_square + 1) - 2))
+	while (index < ((size_square) * (size_square + 1) - 1))
 	{
-		while (result[index] != '.')
+		while (result[index] != '.' && result[index])
 			index++;
 		if (can_place(lst, index, result, size_square) == 1)
 		{
-			place(lst, &result, index);
+			place(lst, &result, index, size_square);
 			ft_putendl(result);
 			if (resolution(lst->next, size_square, result) == 1)
 				return (1);
 		}
-		index++;
+	index++;
 	unplace_piece(lst, &result);
 	}
 	return (0);

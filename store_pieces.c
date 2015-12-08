@@ -6,26 +6,32 @@
 /*   By: pabril <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/04 11:16:02 by pabril            #+#    #+#             */
-/*   Updated: 2015/12/06 14:57:35 by pabril           ###   ########.fr       */
+/*   Updated: 2015/12/08 18:10:03 by pabril           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "fillit.h"
 
-
-/*function to reduce each piece to the minimum chain*/
-void	reduce_piece(t_list **lst)
+/*function to resize each piece to the minimum chain*/
+void	resize_lst(t_list *lst, int size_square)
 {
+	int		diff;
+	t_list	*tempo;
 	char	*str;
-	t_list *tempo;
 
-	tempo = *lst;
+	tempo = lst;
+	diff = size_square - 4;
+	if (size_square == 4)
+		return ;
 	while (tempo)
 	{
-		str = (char *)(tempo->content);
-
-
+		str = create_square(size_square);
+		ft_strncpy(str, tempo->content, 4);
+		ft_strncpy(str + (size_square + 1), tempo->content + 5, 4);
+		ft_strncpy(str + (2 * size_square) + 2, tempo->content + 10, 4);
+		ft_strncpy(str + (3 * size_square) + 3, tempo->content + 15, 4);
+		tempo->content = str;
 		tempo = tempo->next;
 	}
 }
