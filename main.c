@@ -6,7 +6,7 @@
 /*   By: pabril <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/04 10:37:23 by pabril            #+#    #+#             */
-/*   Updated: 2015/12/08 14:30:47 by pabril           ###   ########.fr       */
+/*   Updated: 2015/12/08 15:29:50 by pabril           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,5 @@ int		main(int argc, char **argv)
 	t_list *lst;
 	lst = store_pieces(buffer);
 	resolution(lst, size_square, result);
-	ft_putendl(result);
 	return (0);
 }

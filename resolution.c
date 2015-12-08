@@ -6,7 +6,7 @@
 /*   By: pabril <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/05 12:20:37 by pabril            #+#    #+#             */
-/*   Updated: 2015/12/08 14:30:50 by pabril           ###   ########.fr       */
+/*   Updated: 2015/12/08 15:29:46 by pabril           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*create_square(int size)
 
 	i = 0;
 	index = 0;
-	square = ft_strnew(size * (size + 1));
+	square = ft_strnew(size * (size + 1) + 1);
 	if (!square)
 		return (NULL);
 	while (index < (size * (size + 1)))
@@ -52,13 +52,14 @@ int		can_place(t_list *lst, int index, char *result, int size_square)
 		i++;
 	while (str[i])
 	{
-		if (index > (size_square * size_square + 1) - 2)
+		if (index > (size_square * (size_square + 1)) - 2)
 			return (0);
 		if (ft_isupper(str[i]) == 1 && result[index] == '.')
 			count++;
 		i++;
 		index++;
 	}
+	ft_putendl(result);
 	if (count == 4)
 		return (1);
 	return (0);
@@ -109,18 +110,19 @@ int		resolution(t_list *lst, int size_square, char *result)
 	index = 0;
 	if (lst == NULL)
 		return (1);
-	while (index < (size_square) * (size_square + 1) - 2)
+	while (index < ((size_square) * (size_square + 1) - 2))
 	{
 		while (result[index] != '.')
 			index++;
 		if (can_place(lst, index, result, size_square) == 1)
 		{
 			place(lst, &result, index);
+			ft_putendl(result);
 			if (resolution(lst->next, size_square, result) == 1)
 				return (1);
 		}
 		index++;
-	}
 	unplace_piece(lst, &result);
+	}
 	return (0);
 }
