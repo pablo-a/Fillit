@@ -6,7 +6,7 @@
 /*   By: pabril <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/05 12:20:37 by pabril            #+#    #+#             */
-/*   Updated: 2015/12/08 13:35:59 by pabril           ###   ########.fr       */
+/*   Updated: 2015/12/08 13:41:43 by pabril           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int		can_place(t_list *lst, int index, char *result, int size_square)
 
 	str = (char *)lst->content;
 	i = 0;
+	count = 0;
 	while (ft_isupper(str[i]) != 1)
 		i++;
 	while (str[i])
@@ -62,6 +63,7 @@ void	place(t_list *lst, char **result, int index)
 	int i;
 	char *str;
 
+	i = 0;
 	str = (char *)lst->content;
 	while (ft_isupper(str[i]) != 1)
 		i++;
