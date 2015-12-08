@@ -6,7 +6,7 @@
 /*   By: pabril <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/05 12:20:37 by pabril            #+#    #+#             */
-/*   Updated: 2015/12/08 13:00:46 by pabril           ###   ########.fr       */
+/*   Updated: 2015/12/08 13:18:32 by pabril           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,42 @@ char	*create_square(int size)
 
 int		can_place(t_list *lst, int index, char *result)
 {
+	char *str;
+	int i;
+	int count;
 
+	str = (char *)lst->content;
+	i = 0;
+	while (ft_isupper(str[i]) != 1)
+		i++;
+	while (str[i])
+	{
+		if (index > )
+		if (ft_isupper(str[i]) == 1 && result[index] == '.')
+			count++;
+		i++;
+		count++;
+	}
+	if (count == 4)
+		return (1);
+	return (0);
 }
 
 void	place(t_list *lst, char **result, int index)
 {
+	int i;
+	char *str;
 
+	str = (char *)lst->content;
+	while (ft_isupper(str[i]) != 1)
+		i++;
+	while (str[i])
+	{
+		if (ft_isupper(str[i]) == 1)
+			(*result)[index] = str[i];
+		i++;
+		index++;
+	}
 }
 
 void	unplace_piece(t_list *lst, char **result)
