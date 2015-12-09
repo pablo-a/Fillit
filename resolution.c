@@ -6,7 +6,7 @@
 /*   By: pabril <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/05 12:20:37 by pabril            #+#    #+#             */
-/*   Updated: 2015/12/08 18:27:27 by pabril           ###   ########.fr       */
+/*   Updated: 2015/12/09 11:36:23 by pabril           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ int		can_place(t_list *lst, int index, char *result, int size_square)
 	int count;
 
 	str = (char *)lst->content;
-	ft_putendl(str);
 	i = 0;
 	count = 0;
 	while (ft_isupper(str[i]) != 1)

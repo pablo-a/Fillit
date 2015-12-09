@@ -6,7 +6,7 @@
 /*   By: pabril <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/04 11:16:02 by pabril            #+#    #+#             */
-/*   Updated: 2015/12/08 18:10:03 by pabril           ###   ########.fr       */
+/*   Updated: 2015/12/09 11:35:58 by pabril           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "fillit.h"
 
 /*function to resize each piece to the minimum chain*/
-void	resize_lst(t_list *lst, int size_square)
+void	resize_lst(t_list *lst, int size_square, int nb)
 {
 	int		diff;
 	t_list	*tempo;
@@ -27,10 +27,10 @@ void	resize_lst(t_list *lst, int size_square)
 	while (tempo)
 	{
 		str = create_square(size_square);
-		ft_strncpy(str, tempo->content, 4);
-		ft_strncpy(str + (size_square + 1), tempo->content + 5, 4);
-		ft_strncpy(str + (2 * size_square) + 2, tempo->content + 10, 4);
-		ft_strncpy(str + (3 * size_square) + 3, tempo->content + 15, 4);
+		ft_strncpy(str, tempo->content, nb);
+		ft_strncpy(str + (size_square + 1), tempo->content + nb + 1, nb);
+		ft_strncpy(str + (2 * size_square) + 2, tempo->content + (2 * nb) + 2, nb);
+		ft_strncpy(str + (3 * size_square) + 3, tempo->content + (3 * nb) + 3, nb);
 		tempo->content = str;
 		tempo = tempo->next;
 	}
