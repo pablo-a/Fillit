@@ -6,7 +6,7 @@
 /*   By: pabril <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/04 10:37:23 by pabril            #+#    #+#             */
-/*   Updated: 2015/12/09 12:09:55 by pabril           ###   ########.fr       */
+/*   Updated: 2015/12/09 17:45:31 by pabril           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,8 @@ int		main(int argc, char **argv)
 	lst = store_pieces(buffer);
 	if (size_square > 3)
 		resize_lst(lst, size_square, 4);
+//	else
+//		reduce_lst(lst, size_square, 4);
 	nb  = size_square;
 	while (resolution(lst, size_square, result) == 0)
 	{

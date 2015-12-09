@@ -6,7 +6,7 @@
 /*   By: pabril <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/04 11:16:02 by pabril            #+#    #+#             */
-/*   Updated: 2015/12/09 11:35:58 by pabril           ###   ########.fr       */
+/*   Updated: 2015/12/09 17:47:35 by pabril           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,11 @@ void	resize_lst(t_list *lst, int size_square, int nb)
 	diff = size_square - 4;
 	if (size_square == 4)
 		return ;
+//	if (size_square < 4)
+//	{
+//		reduce_lst(lst, size_square, nb);
+//		return ;
+//	}
 	while (tempo)
 	{
 		str = create_square(size_square);
@@ -35,6 +40,11 @@ void	resize_lst(t_list *lst, int size_square, int nb)
 		tempo = tempo->next;
 	}
 }
+
+//void	reduce_lst(t_list *lst, int size_square, int nb)
+//{
+//
+//}
 
 // function allows to reduce all pieces to a unique piece : AAAA, BBBB, CCCC, ...
 void	identify_piece(t_list **lst)
