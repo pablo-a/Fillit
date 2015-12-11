@@ -6,7 +6,7 @@
 /*   By: pabril <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/04 16:06:51 by pabril            #+#    #+#             */
-/*   Updated: 2015/12/06 12:40:49 by pabril           ###   ########.fr       */
+/*   Updated: 2015/12/11 16:07:13 by pabril           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,13 @@ int		check_number_pieces(char *str, int index)
 
 int		count_neighbours(int count, char *str, int index, int i)
 {
-	if (i % 20 > 4 && str[index - 5] == '#')// voisin en haut ?
+	if (i % 20 > 4 && str[index - 5] == '#')
 		count++;
-	if (i % 20 < 15 && str[index + 5] == '#') // voisin en bas ?
+	if (i % 20 < 15 && str[index + 5] == '#')
 		count++;
-	if (i % 5 > 0 && str[index - 1] == '#') // voisin a gauche ?
+	if (i % 5 > 0 && str[index - 1] == '#')
 		count++;
-	if (i % 5 < 3 && str[index + 1] == '#') // voisin a droite ?
+	if (i % 5 < 3 && str[index + 1] == '#')
 		count++;
 	return (count);
 }
@@ -59,7 +59,7 @@ int		check_shape(char *str, int index)
 	}
 	while (i % 20 != 0 || i == 0)
 	{
-		count +=  count_neighbours(0, str, index, i);
+		count += count_neighbours(0, str, index, i);
 		index++;
 		i++;
 		while (str[index] != '#' && i % 20 != 0)

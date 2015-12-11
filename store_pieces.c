@@ -6,20 +6,19 @@
 /*   By: pabril <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/04 11:16:02 by pabril            #+#    #+#             */
-/*   Updated: 2015/12/11 14:42:36 by pabril           ###   ########.fr       */
+/*   Updated: 2015/12/11 16:11:12 by pabril           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "fillit.h"
 
-// function allows to reduce all pieces to a unique piece : AAAA, BBBB, CCCC, ...
 void	identify_piece(t_list **lst)
 {
-	int i;
-	int piece;
-	char *str;
-	t_list *tempo;
+	int		i;
+	int		piece;
+	char	*str;
+	t_list	*tempo;
 
 	piece = 0;
 	tempo = *lst;
@@ -40,10 +39,8 @@ void	identify_piece(t_list **lst)
 
 int		empty_left_and_top(char *str)
 {
-	//empty top
 	if (str[0] == '.' && str[1] == '.' && str[2] == '.' && str[3] == '.')
 		return (1);
-	//empty left
 	if (str[0] == '.' && str[5] == '.' && str[10] == '.' && str[15] == '.')
 		return (2);
 	return (0);
@@ -72,8 +69,8 @@ char	*replace_piece(char *str, int cas)
 
 void	place_piece(t_list **lst)
 {
-	t_list *tempo;
-	char *str;
+	t_list	*tempo;
+	char	*str;
 
 	tempo = *lst;
 	while (tempo)
@@ -81,12 +78,11 @@ void	place_piece(t_list **lst)
 		str = (char *)tempo->content;
 		while (empty_left_and_top(str) != 0)
 			str = replace_piece(str, empty_left_and_top(str));
-		ft_putendl("ok");
 		tempo->content = str;
 		tempo = tempo->next;
 	}
 }
-// store all pieces in a chained list and return her adress
+
 t_list	*store_pieces(char *str)
 {
 	t_list			*lst;

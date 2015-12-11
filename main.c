@@ -6,7 +6,7 @@
 /*   By: pabril <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/04 10:37:23 by pabril            #+#    #+#             */
-/*   Updated: 2015/12/11 15:24:10 by pabril           ###   ########.fr       */
+/*   Updated: 2015/12/11 16:32:18 by pabril           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,6 @@ int		all_squares(char *str)
 		return (1);
 }
 
-//checker.c
-
 int		sign_checker(char *str)
 {
 	int i;
@@ -55,20 +53,16 @@ int		sign_checker(char *str)
 	while (str[i] != '\0')
 	{
 		if (str[i] != '\n' && str[i] != '.' && str[i] != '#')
-			return (0); //so this would mean it's invalid due to invalid signs
+			return (0);
 		i++;
 	}
 	return (1);
 }
 
-//I've checke for the validity of the signs and the squares
-//now I need to see if the Tetrimonis are valid as well
-
-int		main(int argc, char **argv)
+int		read_file(char *buffer, int argc, char **argv)
 {
 	int		fd;
 	char	buff;
-	char	buffer[BUFF_SIZE];
 	int		i;
 	int		nb;
 
@@ -79,10 +73,22 @@ int		main(int argc, char **argv)
 	fd = open(argv[1], O_RDONLY);
 	while (read(fd, &buff, 1) != 0 && buff != '\0')
 	{
-		buffer[i] = buff;//								scanning into the buffer
+		buffer[i] = buff;
 		i++;
 	}
-	//buffer[i] = '\0';
+	return (1);
+}
+
+int		main(int argc, char **argv)
+{
+	char	buffer[BUFF_SIZE];
+	int		nb;
+	int		size_square;
+	char	*result;
+	t_list	*lst;
+
+	if (read_file(buffer, argc, argv) == 0)
+		return (0);
 	if (sign_checker(buffer) && all_squares(buffer) && check_valid_piece(buffer))
 		printf("test!\n");
 	else
@@ -90,20 +96,18 @@ int		main(int argc, char **argv)
 		ft_putendl("error");
 		return (0);
 	}
-	int size_square = min_size_square(buffer);
-	t_list *lst;
+	size_square = min_size_square(buffer);
 	lst = store_pieces(buffer);
 	while (resize_lst(lst, size_square, 4) == 0)
 		size_square++;
-	char *result;
 	result = create_square(size_square);
-	nb  = size_square;
+	nb = size_square;
 	while (resolution(lst, size_square, result) == 0)
 	{
 		size_square++;
 		result = create_square(size_square);
 		resize_lst(lst, size_square, nb);
-		nb ++;
+		nb++;
 	}
 	ft_putendl(result);
 	return (0);

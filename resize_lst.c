@@ -6,14 +6,13 @@
 /*   By: pabril <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/11 14:27:44 by pabril            #+#    #+#             */
-/*   Updated: 2015/12/11 15:26:55 by pabril           ###   ########.fr       */
+/*   Updated: 2015/12/11 16:02:06 by pabril           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "fillit.h"
 
-/*function to resize each piece to the same size of the final square chain*/
 int		resize_lst(t_list *lst, int size_square, int nb)
 {
 	int		diff;
@@ -33,8 +32,10 @@ int		resize_lst(t_list *lst, int size_square, int nb)
 		str = create_square(size_square);
 		ft_strncpy(str, tempo->content, nb);
 		ft_strncpy(str + (size_square + 1), tempo->content + nb + 1, nb);
-		ft_strncpy(str + (2 * size_square) + 2, tempo->content + (2 * nb) + 2, nb);
-		ft_strncpy(str + (3 * size_square) + 3, tempo->content + (3 * nb) + 3, nb);
+		ft_strncpy(str + (2 * size_square) + 2, tempo->content + (2 * nb) + 2,
+				nb);
+		ft_strncpy(str + (3 * size_square) + 3, tempo->content + (3 * nb) + 3,
+				nb);
 		tempo->content = str;
 		tempo = tempo->next;
 	}
@@ -51,14 +52,15 @@ int		column_and_line_empty(char *str)
 
 int		can_reduce(t_list *lst, int size_square)
 {
-	int i;
-	char *src;
+	int		i;
+	char	*src;
 
 	i = 0;
 	src = lst->content;
 	if (size_square == 2)
 	{
-		if (ft_isupper(src[0]) && ft_isupper(src[1]) && ft_isupper(src[5]) && ft_isupper(src[6]))
+		if (ft_isupper(src[0]) && ft_isupper(src[1]) && ft_isupper(src[5])
+				&& ft_isupper(src[6]))
 		{
 			ft_putendl("hello");
 			return (1);
@@ -99,8 +101,8 @@ char	*reduce(t_list *lst, int size_square)
 
 int		reduce_lst(t_list *lst, int size_square)
 {
-	t_list *tempo;
-	int index;
+	t_list	*tempo;
+	int		index;
 
 	index = 0;
 	tempo = lst;
