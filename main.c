@@ -6,7 +6,7 @@
 /*   By: pabril <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/04 10:37:23 by pabril            #+#    #+#             */
-/*   Updated: 2015/12/11 17:39:52 by pabril           ###   ########.fr       */
+/*   Updated: 2015/12/11 17:50:48 by pabril           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,8 +86,7 @@ int		main(int argc, char **argv)
 
 	if (read_file(buffer, argc, argv) == 0)
 		return (0);
-	if (!sign_checker(buffer) || !all_squares(buffer)
-			|| !check_valid_piece(buffer))
+	if (!sign_checker(buffer) || !all_squares(buffer) || !check_piece(buffer))
 	{
 		ft_putendl("error");
 		return (0);

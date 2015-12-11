@@ -6,7 +6,7 @@
 /*   By: pabril <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/04 10:57:49 by pabril            #+#    #+#             */
-/*   Updated: 2015/12/11 16:33:11 by pabril           ###   ########.fr       */
+/*   Updated: 2015/12/11 17:51:16 by pabril           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int		read_file(char *buffer, int argc, char **argv);
 int		check_number_pieces(char *str, int index);
 int		count_neighbours(int count, char *str, int index, int i);
 int		check_shape(char *str, int index);
-int		check_valid_piece(char *str);
+int		check_piece(char *str);
 
 int		number_pieces(char *str);
 int		min_size_square(char *str);

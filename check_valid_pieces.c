@@ -6,7 +6,7 @@
 /*   By: pabril <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/04 16:06:51 by pabril            #+#    #+#             */
-/*   Updated: 2015/12/11 16:07:13 by pabril           ###   ########.fr       */
+/*   Updated: 2015/12/11 17:51:02 by pabril           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ int		check_shape(char *str, int index)
 	return (0);
 }
 
-int		check_valid_piece(char *str)
+int		check_piece(char *str)
 {
 	int index;
 
