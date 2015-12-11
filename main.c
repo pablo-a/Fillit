@@ -6,7 +6,7 @@
 /*   By: pabril <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/04 10:37:23 by pabril            #+#    #+#             */
-/*   Updated: 2015/12/11 16:32:18 by pabril           ###   ########.fr       */
+/*   Updated: 2015/12/11 17:39:52 by pabril           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,7 @@ int		read_file(char *buffer, int argc, char **argv)
 	int		fd;
 	char	buff;
 	int		i;
-	int		nb;
 
-	nb = 4;
 	i = 0;
 	if (argc != 2)
 		return (0);
@@ -82,16 +80,14 @@ int		read_file(char *buffer, int argc, char **argv)
 int		main(int argc, char **argv)
 {
 	char	buffer[BUFF_SIZE];
-	int		nb;
 	int		size_square;
 	char	*result;
 	t_list	*lst;
 
 	if (read_file(buffer, argc, argv) == 0)
 		return (0);
-	if (sign_checker(buffer) && all_squares(buffer) && check_valid_piece(buffer))
-		printf("test!\n");
-	else
+	if (!sign_checker(buffer) || !all_squares(buffer)
+			|| !check_valid_piece(buffer))
 	{
 		ft_putendl("error");
 		return (0);
@@ -101,14 +97,12 @@ int		main(int argc, char **argv)
 	while (resize_lst(lst, size_square, 4) == 0)
 		size_square++;
 	result = create_square(size_square);
-	nb = size_square;
 	while (resolution(lst, size_square, result) == 0)
 	{
 		size_square++;
 		result = create_square(size_square);
-		resize_lst(lst, size_square, nb);
-		nb++;
+		resize_lst(lst, size_square, size_square - 1);
 	}
-	ft_putendl(result);
+	ft_putstr(result);
 	return (0);
 }
