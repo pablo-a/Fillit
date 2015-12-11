@@ -6,7 +6,7 @@
 /*   By: pabril <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/04 10:37:23 by pabril            #+#    #+#             */
-/*   Updated: 2015/12/11 17:50:48 by pabril           ###   ########.fr       */
+/*   Updated: 2015/12/11 18:03:23 by pabril           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int		all_squares(char *str)
 			sign++;
 			block++;
 		}
-		if (str[i] == '\n' && sign != 4 && block != 16)
+		if (str[i] == '\n' & sign != 4 & block != 16)
 			return (0);
 		if (str[i] == '\n' && sign == 4)
 			sign = 0;
@@ -41,8 +41,7 @@ int		all_squares(char *str)
 	}
 	if (block != 16)
 		return (0);
-	else
-		return (1);
+	return (1);
 }
 
 int		sign_checker(char *str)
@@ -67,7 +66,10 @@ int		read_file(char *buffer, int argc, char **argv)
 
 	i = 0;
 	if (argc != 2)
+	{
+		ft_putendl("error");
 		return (0);
+	}
 	fd = open(argv[1], O_RDONLY);
 	while (read(fd, &buff, 1) != 0 && buff != '\0')
 	{

@@ -6,7 +6,7 @@
 /*   By: pabril <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/11 14:27:44 by pabril            #+#    #+#             */
-/*   Updated: 2015/12/11 16:02:06 by pabril           ###   ########.fr       */
+/*   Updated: 2015/12/11 18:12:19 by pabril           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,10 +61,7 @@ int		can_reduce(t_list *lst, int size_square)
 	{
 		if (ft_isupper(src[0]) && ft_isupper(src[1]) && ft_isupper(src[5])
 				&& ft_isupper(src[6]))
-		{
-			ft_putendl("hello");
 			return (1);
-		}
 		return (0);
 	}
 	while (lst)
