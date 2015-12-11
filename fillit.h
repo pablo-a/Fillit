@@ -6,7 +6,7 @@
 /*   By: pabril <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/04 10:57:49 by pabril            #+#    #+#             */
-/*   Updated: 2015/12/09 11:05:34 by pabril           ###   ########.fr       */
+/*   Updated: 2015/12/11 15:16:44 by pabril           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,17 @@ int		check_valid_piece(char *str);//
 int		number_pieces(char *str);//				functions of
 int		min_size_square(char *str);//			min_size_square.c
 
-void	resize_lst(t_list *lst, int size_square, int nb);
+int		resize_lst(t_list *lst, int size_square, int nb);
+int		reduce_lst(t_list *lst, int size_square);//				functions of
+int		can_reduce(t_list *lst, int size_square);//  resize_lst.c
+int		column_and_line_empty(char *str);
+char	*reduce(t_list *lst, int size_square);
+
 t_list	*store_pieces(char *str);//				function of store_pieces.c
 void	identify_piece(t_list **lst);
+int		empty_left_and_top(char *str);
+char	*replace_piece(char *str, int cas);
+void	place_piece(t_list **lst);
 
 char	*create_square(int size);//									functions of
 int		can_place(t_list *lst, int index, char *result, int size_square);

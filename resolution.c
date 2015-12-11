@@ -6,7 +6,7 @@
 /*   By: pabril <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/05 12:20:37 by pabril            #+#    #+#             */
-/*   Updated: 2015/12/09 18:02:07 by pabril           ###   ########.fr       */
+/*   Updated: 2015/12/11 14:29:39 by pabril           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,7 +114,7 @@ int		resolution(t_list *lst, int size_square, char *result)
 		if (can_place(lst, index, result, size_square) == 1)
 		{
 			place(lst, &result, index, size_square);
-			ft_putendl(result);
+			//ft_putendl(result);
 			if (resolution(lst->next, size_square, result) == 1)
 				return (1);
 		}

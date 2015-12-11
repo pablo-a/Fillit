@@ -6,7 +6,7 @@
 /*   By: pabril <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/04 10:37:23 by pabril            #+#    #+#             */
-/*   Updated: 2015/12/09 17:45:31 by pabril           ###   ########.fr       */
+/*   Updated: 2015/12/11 15:24:10 by pabril           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,15 +91,12 @@ int		main(int argc, char **argv)
 		return (0);
 	}
 	int size_square = min_size_square(buffer);
-	ft_putnbr(size_square);
-	char *result;
-	result = create_square(size_square);
 	t_list *lst;
 	lst = store_pieces(buffer);
-	if (size_square > 3)
-		resize_lst(lst, size_square, 4);
-//	else
-//		reduce_lst(lst, size_square, 4);
+	while (resize_lst(lst, size_square, 4) == 0)
+		size_square++;
+	char *result;
+	result = create_square(size_square);
 	nb  = size_square;
 	while (resolution(lst, size_square, result) == 0)
 	{

@@ -6,7 +6,7 @@
 #    By: pabril <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/04 12:57:46 by pabril            #+#    #+#              #
-#    Updated: 2015/12/08 12:58:58 by pabril           ###   ########.fr        #
+#    Updated: 2015/12/11 15:06:00 by pabril           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ NAME = fillit
 SRC = main.c \
 	  min_size_square.c \
 	  store_pieces.c \
+	  resize_lst.c \
 	  check_valid_pieces.c \
 	  resolution.c
 
