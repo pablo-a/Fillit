@@ -6,7 +6,7 @@
 /*   By: pabril <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/04 16:06:51 by pabril            #+#    #+#             */
-/*   Updated: 2015/12/11 17:51:02 by pabril           ###   ########.fr       */
+/*   Updated: 2015/12/14 11:17:16 by pabril           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,9 +80,9 @@ int		check_piece(char *str)
 	index = 0;
 	while (str[index] != '\0')
 	{
-		if (check_number_pieces(str, index) == 0 && printf("wrong nb of #\n"))
+		if (check_number_pieces(str, index) == 0)
 			return (0);
-		if (check_shape(str, index) == 0 && printf("forme non ok\n"))
+		if (check_shape(str, index) == 0)
 			return (0);
 		index += 21;
 	}
