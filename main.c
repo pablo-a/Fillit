@@ -6,7 +6,7 @@
 /*   By: pabril <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/04 10:37:23 by pabril            #+#    #+#             */
-/*   Updated: 2015/12/14 14:04:54 by pabril           ###   ########.fr       */
+/*   Updated: 2016/01/27 10:14:17 by pabril           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,27 +17,25 @@ int		all_squares(char *str)
 {
 	int block;
 	int sign;
-	int i;
 
-	i = 0;
 	sign = 0;
 	block = 0;
-	while (str[i] != '\0')
+	while (*str != '\0')
 	{
-		if (str[i] == '.' || str[i] == '#')
+		if (*str == '.' || *str == '#')
 		{
 			sign++;
 			block++;
 		}
-		if (str[i] == '\n' & sign != 4 & block != 16)
+		if (*str == '\n' & sign != 4 & block != 16)
 			return (0);
-		if (str[i] == '\n' && sign == 4)
+		if (*str == '\n' && sign == 4)
 			sign = 0;
-		if (str[i] == '\n' && str[i - 1] == '\n' && block == 16)
+		if (*str == '\n' && *(str - 1) == '\n' && block == 16)
 			block = 0;
 		if (sign > 4 || block > 16)
 			return (0);
-		i++;
+		str++;
 	}
 	if (block != 16)
 		return (0);
